@@ -1,12 +1,12 @@
 import express from 'express'
 
-import { healthCheck } from './controllers/health.controller.js'
+import healthRoutes from './routes/health.routes.js'
 
 const app = express()
 
 app.use( express.json() )
 
-app.get('/api/health', healthCheck)
+app.use('/api/health', healthRoutes)
 
 
 export default app;
