@@ -1,6 +1,9 @@
 import app from './app.js'
 
 import {env} from './config/config.js'
+import { connectDB } from './config/database.js';
+
+await connectDB()
 
 app.listen( env.PORT , () => {
     console.log( `Servidor corriendo en ${env.PORT}`);
